@@ -1,0 +1,7 @@
+$color-red: #f00;
+
+.container {
+    &-child {
+        color: $color-red;
+    }
+}
