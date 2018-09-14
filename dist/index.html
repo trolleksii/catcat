@@ -1,1 +1,42 @@
-<head><link href="css/style.css" rel="stylesheet"></head><script type="text/javascript" src="js/bundle.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cat Catalog</title>
+<link href="css/style.css" rel="stylesheet"></head>
+<body>
+    <header class='header'>
+        <div class="brand">
+            <a class="brand__link" href="#">
+                <div class="brand__logo">
+                    <img class="brand__img" src="/img/logo.png" alt="">
+                    <img class="brand__img--eyes" src="/img/eyes.png" alt="">
+                </div>
+                <div class="brand__name">CatBoard</div>
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item"><a class="nav__link jsAddBreed">Add new breed</a></li>
+                <li class="nav__list-item"><a class="nav__link jsAddImage">Add new image</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="row">
+            <select name="breeds" class="breeds">
+            </select>
+        </div>
+        <div class="row">
+            <div class="tile">
+                <img src="" alt="Cat image" class="tile__image">
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="js/bundle.js"></script>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>
