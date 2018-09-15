@@ -1,39 +1,32 @@
 import '../css/main.scss';
-import {getBreeds} from './models/Breeds';
-import {getRandomCat} from './models/Cat';
-import {renderBreeds} from './views/breedsView';
-// Init page: Load breeds list, load initial image
+import * as pageBuilder from './pages/pageBuilder';
+
+// Init
+// Build main page, set up event listeners for menu items
+
 (() => {
-    const elements = {
-        breeds: document.querySelector('.breeds'),
-        image: document.querySelector('.cat-image'),
-        button: document.querySelector('.next-cat'),
-    };
-    // Populate list of breeds
-    getBreeds().
-    then(breeds => {
-        renderBreeds(elements.breeds, breeds);
-    })
-    .catch(err => {
-        alert(err);
-    })
-    // Get picture for the front side of the tile
-    getRandomCat()
-    .then(url => {
-        elements.image.setAttribute('src', url);
-    })
-    .catch(err => {
-        alert(err);
+    const menu = document.querySelector('.nav')
+    document.querySelector('.mobile-nav').addEventListener('click', () => {
+        menu.classList.toggle('nav-unwrapped');
     });
-    // set up on-click event listener
-    elements.button.addEventListener('click', () => {
-        const breed = elements.breeds.selectedOptions[0].value;
-        getRandomCat(breed)
-        .then(url => {
-            elements.image.setAttribute('src', url);
-        })
-        .catch(err => {
-            alert(err);
-        });
-    })
+    const root = document.querySelector('.main');
+    // pageBuilder.buildMain(root);
+    document.querySelector('.brand__link').addEventListener('click', (event) => {
+        event.preventDefault();
+        menu.classList.remove('nav-unwrapped');
+        pageBuilder.clearPage(root);
+        pageBuilder.buildMain(root);
+    });
+    document.querySelector('.jsAddBreed').addEventListener('click', (event) => {
+        event.preventDefault();
+        menu.classList.remove('nav-unwrapped');
+        pageBuilder.clearPage(root);
+        pageBuilder.buildAddBreed(root);
+    });
+    document.querySelector('.jsAddImage').addEventListener('click', (event) => {
+        event.preventDefault();
+        menu.classList.remove('nav-unwrapped');
+        pageBuilder.clearPage(root);
+        pageBuilder.buildAddCat(root);
+    });
 })();

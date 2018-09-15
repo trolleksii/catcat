@@ -3,6 +3,7 @@
 $color-white: #fff;
 $color-black: #000;
 $color-emerald: #2ecc71;
+$color-emerald-dark: #27ae60;
 
 * {
     margin: 0;
@@ -30,6 +31,7 @@ body {
     box-shadow: 0 2px 4px rgba($color-black, .3);
 }
 
+
 .brand {
     display: block;
     float: left;
@@ -37,6 +39,7 @@ body {
 
     &__link {
         display: block;
+        cursor: pointer;
         &:link,
         &:visited {
             color: $color-white;
@@ -67,6 +70,7 @@ body {
     }
 
     &__name {
+        color: $color-white;
         font-size: 3.5rem;
         display: inline-block;
         vertical-align: middle;
@@ -74,10 +78,12 @@ body {
 }
 
 .nav {
+    position: relative;
     display: block;
     float: right;
     height: 5rem;
-
+    margin-right: 3rem;
+    z-index: 200;
     &__list {
         padding-top: 1rem;
         list-style: none;
@@ -92,7 +98,7 @@ body {
     }
 
     &__link {
-        color: $color-black;
+        color: $color-white;
         cursor: pointer;
         &:link,
         &:visited {
@@ -154,11 +160,94 @@ main {
     color: $color-white;
     background-color: $color-emerald;
     font-size: 2.5rem;
+}
 
+.mobile-nav {
+    display: none;
+    background-color: $color-white;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    float: right;
+    margin: .5rem;
+    box-shadow: 0 1px 2px rgba($color-black, .3);
+    cursor: pointer;
+}
+
+.menu-btn {
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &,
+    &::before,
+    &::after {
+        border-radius: 1px;
+        width: 2.5rem;
+        height: 3px;
+        background-color: $color-emerald;
+        display: inline-block;
+        box-shadow: 0 1px 2px rgba($color-black, .3);
+
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .2s;
+    }
+    &::before {
+        top: .8rem;
+    }
+    &::after {
+        top: -.8rem;
+    }
 }
 
 @media (max-width: 500px) {
+    .header {
+        padding: 0 1rem;
+    }
+    .mobile-nav {
+        display: block;
+    }
     .nav {
-        display: none;
+        position: fixed;
+        display: block;
+        top: -5rem;
+        left: 10vw;
+        width: 80vw;
+        height: 10rem;
+        background-color: $color-emerald-dark;
+        border-radius: 5px;
+        z-index: 1;
+        transition: all .5s;
+
+        &__list {
+            text-align: center;
+            padding-top: 0;
+            &-item {
+                height: 4rem;
+                margin: .5rem;
+                display: block;
+                padding: 0 !important;
+            }
+        }
+        &-unwrapped {
+            top: 5rem
+        }
+
+        &__link {
+            color: $color-white;
+            cursor: pointer;
+            &:hover,
+            &:active {
+                text-shadow: none;
+            }
+        }
     }
 }
+
