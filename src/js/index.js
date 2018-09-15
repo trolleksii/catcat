@@ -10,7 +10,7 @@ import * as pageBuilder from './pages/pageBuilder';
         menu.classList.toggle('nav-unwrapped');
     });
     const root = document.querySelector('.main');
-    // pageBuilder.buildMain(root);
+    pageBuilder.buildMain(root);
     document.querySelector('.brand__link').addEventListener('click', (event) => {
         event.preventDefault();
         menu.classList.remove('nav-unwrapped');

@@ -13,7 +13,7 @@ export const getBreeds = () => new Promise((resolve, reject) => {
 
 export const addBreed = (name) => new Promise((resolve, reject) => {
     axios.post(
-        'http://127.0.0.1:8000/api/breeds',
+        'https://cats.wanderingcypriot.co.uk/api/breeds',
         {
             name
         },
@@ -24,7 +24,7 @@ export const addBreed = (name) => new Promise((resolve, reject) => {
         }
     )
     .then(res => {
-        resolve(res);
+        resolve(res.data.message);
     })
     .catch(err => {
         reject(err.response.data.errors[0]);

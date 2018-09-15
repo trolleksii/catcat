@@ -1,9 +1,13 @@
 // Colors
 
 $color-white: #fff;
+$color-gray: #7f8c8d;
 $color-black: #000;
 $color-emerald: #2ecc71;
 $color-emerald-dark: #27ae60;
+$color-yellow: #f1c40f;
+$color-red: #c0392b;
+
 
 * {
     margin: 0;
@@ -113,8 +117,20 @@ body {
     }
 }
 
+.mobile-nav {
+    display: none;
+    background-color: $color-white;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    float: right;
+    margin: .5rem;
+    box-shadow: 0 1px 2px rgba($color-black, .3);
+    cursor: pointer;
+}
+
 main {
-    background-color: #eee;
+    background-color: #ecf0f1;
     position: relative;
     height: 100vh;
     padding-top: 6rem
@@ -132,13 +148,49 @@ main {
     transform: translateX(-50%);
 }
 
-.breeds {
+.breeds-select {
     margin-top: 2rem;
     width: 60vw;
     height: 3rem;
     border-radius: 3px;
     border: none;
     font-size: 2rem;
+}
+
+.breeds-list {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    padding: .5rem;
+    list-style: none;
+    width: 70vw;
+    height: 45vh;
+    font-size: 3rem;
+    overflow: scroll;
+    background-color: $color-yellow;
+    box-shadow: 0 1px 2px rgba($color-black, .3);
+}
+
+.page-header {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.new-breed {
+    width: 60vw;
+    height: 3rem;
+    border-radius: 3px;
+    border: none;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.valid {
+    border: 1px solid $color-emerald-dark;
+}
+
+.invalid {
+    border: 1px solid $color-red;
 }
 
 .cat-image {
@@ -162,16 +214,8 @@ main {
     font-size: 2.5rem;
 }
 
-.mobile-nav {
-    display: none;
-    background-color: $color-white;
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    float: right;
-    margin: .5rem;
-    box-shadow: 0 1px 2px rgba($color-black, .3);
-    cursor: pointer;
+.disabled {
+    background-color: $color-gray;
 }
 
 .menu-btn {

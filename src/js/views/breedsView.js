@@ -1,4 +1,9 @@
-export const renderBreeds = (parent, breeds, prefix='') => {
-    const markup = prefix + breeds.map(breed => `<option value="${breed.slug}">${breed.name}</option>`).join();
+export const renderSelectBreeds = (parent, breeds, prefix='') => {
+    const markup = prefix + breeds.map(breed => `<option value="${breed.slug}">${breed.name}</option>`).join('');
+    parent.insertAdjacentHTML('beforeend', markup);
+};
+
+export const renderListBreeds = (parent, breeds) => {
+    const markup = breeds.map(breed => `<li>${breed.name}</li>`).join('');
     parent.insertAdjacentHTML('beforeend', markup);
 };
