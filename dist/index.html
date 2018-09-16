@@ -8,25 +8,27 @@
     <title>CatBoard</title>
 <link href="css/style.css" rel="stylesheet"></head>
 <body>
-    <header class='header'>
+    <header class="header expanded">
         <div class="brand">
             <a class="brand__link">
                 <div class="brand__logo">
-                    <img class="brand__img" src="/img/logo.png" alt="">
-                    <img class="brand__img--eyes" src="/img/eyes.png" alt="">
+                    <img class="brand__img" src="./img/logo.png" alt="">
+                    <img class="brand__img--eyes" src="./img/eyes.png" alt="">
                 </div>
                 <div class="brand__name">CatBoard</div>
             </a>
         </div>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__list-item"><a class="nav__link jsAddBreed">Add new breed</a></li>
-                <li class="nav__list-item"><a class="nav__link jsAddImage">Add new image</a></li>
-            </ul>
-        </nav>
+        <div class="mobile-nav">
+            <div class="menu-btn"></div>
+        </div>
     </header>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item"><a class="nav__link jsAddBreed">Add breed</a></li>
+            <li class="nav__list-item"><a class="nav__link jsAddImage">Add image</a></li>
+        </ul>
+    </nav>
     <main class="main">
     </main>
-    <script src="js/bundle.js"></script>
 <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>

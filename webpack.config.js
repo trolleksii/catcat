@@ -1,10 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-    entry: ['babel-polyfill', './src/js/index.js'],
+    entry: ['@babel/polyfill','./src/js/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
@@ -18,7 +17,6 @@ module.exports = {
             template: './src/index.html'
         }),
         new MiniCssExtractPlugin({filename: "css/style.css"}),
-        new OptimizeCSSAssetsPlugin({})
     ],
     module: {
         rules: [
@@ -33,8 +31,9 @@ module.exports = {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                    "css-loader",
+                    "postcss-loader",
+                    "sass-loader"
                 ]
             }
         ]
