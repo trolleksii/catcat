@@ -13,13 +13,11 @@ export const clearInput = (input) => {
 }
 
 export const disableElement = (element) => {
-    console.log('disabling', element);
     element.classList.add('disabled');
-    element.attributes.disabled = true;
+    element.setAttribute('disabled', true);
 }
 
 export const enableElement = (element) => {
-    console.log('enabling', element);
     element.classList.remove('disabled');
-    element.attributes.disabled = false;
+    element.removeAttribute('disabled');
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getRandomCat = (breed='') => new Promise((resolve, reject) => {
-    const url = `https://cats.wanderingcypriot.co.uk/api/${breed === '' ? '': `breeds/${breed}/`}random`;
+    const url = `https://cats.wanderingcypriot.co.uk/api/breeds/${breed === '' ? '': `${breed}/`}random`;
     axios.get(url)
     .then(res => {
         resolve(res.data.message);
@@ -12,7 +12,7 @@ export const getRandomCat = (breed='') => new Promise((resolve, reject) => {
 });
 
 export const uploadCatImage = (breed, formData) => new Promise((resolve, reject) => {
-    const url = `https://cats.wanderingcypriot.co.uk/api/${breed}/`;
+    const url = `https://cats.wanderingcypriot.co.uk/api/breeds/${breed}`;
     axios.post(url, formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
