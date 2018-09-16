@@ -9,7 +9,7 @@ export const buildMain = (parent) => {
     <div class="row">
         <img src="" alt="Cat image" class="cat-image">
     </div>
-    <div class="row to-bottom">
+    <div class="row">
         <div class="row">
             <select name="breeds" class="breeds-select">
                 <option value="">All Breeds</option>
@@ -66,7 +66,7 @@ export const buildAddBreed = (parent) => {
         <ul class="breeds-list">
         </ul>
     </div>
-    <div class="row to-bottom">
+    <div class="row">
         <form class="breed-form">
             <div class="row">
             <input class="new-breed" type="text" name="" placeholder="Add new breed">

@@ -141,13 +141,6 @@ main {
     text-align: center;
 }
 
-.to-bottom {
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translateX(-50%);
-}
-
 .breeds-select {
     margin-top: 2rem;
     width: 60vw;
@@ -162,7 +155,6 @@ main {
     margin: 0 auto;
     text-align: left;
     padding: .5rem;
-    list-style: none;
     width: 70vw;
     height: 45vh;
     font-size: 3rem;
