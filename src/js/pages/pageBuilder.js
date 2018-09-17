@@ -11,19 +11,19 @@ export const buildMain = (parent) => {
     </div>
     <div class="row">
         <div class="row">
-            <select name="breeds" class="breeds-select">
+            <select name="breeds" class="breed__selector">
                 <option value="">All Breeds</option>
             </select>
         </div>
         <div class="row">
-            <button class="btn next-cat">Next</button>
+            <button class="btn">Next</button>
         </div>
     </div>`;
     parent.insertAdjacentHTML('beforeend', markup);
     const elements = {
-        breeds: document.querySelector('.breeds-select'),
+        breeds: document.querySelector('.breed__selector'),
         image: document.querySelector('.cat-image'),
-        button: document.querySelector('.next-cat'),
+        button: document.querySelector('.btn'),
     };
     // Populate list of breeds
     getBreeds().
@@ -57,13 +57,13 @@ export const buildMain = (parent) => {
 export const buildAddBreed = (parent) => {
     const markup = `
     <div class="row">
-        <h2 class="page-header">Add new breed</h2>
+        <h2 class="page-heading">Add new breed</h2>
     </div>
     <div class="row">
         <p class="page-text">Breeds currently present:</p>
     </div>
     <div class="row">
-        <ul class="breeds-list">
+        <ul class="breed__list">
         </ul>
     </div>
     <div class="row">
@@ -78,7 +78,7 @@ export const buildAddBreed = (parent) => {
     </div>`;
     parent.insertAdjacentHTML('beforeend', markup);
     const elements = {
-        breeds: document.querySelector('.breeds-list'),
+        breeds: document.querySelector('.breed__list'),
         input: document.querySelector('.new-breed'),
         form: document.querySelector('.breed-form'),
         button: document.querySelector('.btn')
@@ -128,10 +128,10 @@ export const buildAddBreed = (parent) => {
 export const buildAddCat = (parent) => {
     const markup = `
     <div class="row">
-        <h2 class="page-header">Add new image</h2>
+        <h2 class="page-heading">Add new image</h2>
     </div>
     <div class="row">
-        <select name="breeds" class="breeds-select">
+        <select name="breeds" class="breed__selector">
         </select>
     </div>
     <div class="row">
@@ -149,7 +149,7 @@ export const buildAddCat = (parent) => {
     </div>`;
     parent.insertAdjacentHTML('beforeend', markup);
     const elements = {
-        breeds: document.querySelector('.breeds-select'),
+        breeds: document.querySelector('.breed__selector'),
         form: document.querySelector('.form'),
         files: document.querySelector('.file-input'),
         button: document.querySelector('.btn')
