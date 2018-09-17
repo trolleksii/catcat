@@ -125,6 +125,14 @@ export const buildAddBreed = (parent) => {
     });
 };
 
+const renderSuccessIcon = (parent) => {
+    const markup = '<i class="icon ion-md-checkmark"></i>';
+    parent.insertAdjacentHTML('beforeend', markup);
+    setTimeout(()=>{
+        parent.innerHTML = '';
+    }, 2000);
+};
+
 export const buildAddCat = (parent) => {
     const markup = `
     <div class="row">
@@ -142,7 +150,7 @@ export const buildAddCat = (parent) => {
             <p class="page-text">You can upload one or more image files, each of them should be less than 500KB.
             </p>
             <div class="row">
-                <input type="submit" value="Add" class="btn disabled" disabled>
+                <input type="submit" value="Add" class="btn disabled" disabled><div class="success"></div>
             </div>
         </div>
         </form>
@@ -152,7 +160,8 @@ export const buildAddCat = (parent) => {
         breeds: document.querySelector('.breed__selector'),
         form: document.querySelector('.form'),
         files: document.querySelector('.file-input'),
-        button: document.querySelector('.btn')
+        button: document.querySelector('.btn'),
+        success: document.querySelector('.success')
     };
     getBreeds().
     then(breeds => {
@@ -178,8 +187,9 @@ export const buildAddCat = (parent) => {
             }
         };
         uploadCatImage(breed, formData)
-        .then(res => {
-            console.log(res);
+        .then(() => {
+            elements.form.reset();
+            renderSuccessIcon(elements.success);
         })
         .catch(err => {
             alert(err);
