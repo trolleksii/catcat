@@ -1,0 +1,17 @@
+.row {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.valid {
+    border: 1px solid $color-emerald-dark;
+}
+
+.invalid {
+    border: 1px solid $color-red;
+}
+
+.disabled {
+    background-color: $color-gray;
+    cursor: not-allowed;
+}

@@ -1,0 +1,9 @@
+.cat-image {
+    display: block;
+    margin: 0 auto;
+    max-height: 60vh;
+    width: auto;
+    max-width: 90vw;
+    object-fit: scale-down;
+    box-shadow: 0 2px 4px rgba($color-black, .3);
+}

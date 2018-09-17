@@ -1,0 +1,27 @@
+.breed {
+    &__selector {
+        margin-top: 2rem;
+        width: 60vw;
+        height: 3rem;
+        border-radius: 3px;
+        border: none;
+        font-size: 2rem;
+    }
+
+    &__list {
+        display: block;
+        margin: 0 auto;
+        text-align: left;
+        padding: .5rem;
+        width: 70vw;
+        height: 45vh;
+        font-size: 3rem;
+        overflow: scroll;
+        background-color: $color-yellow;
+        box-shadow: 0 1px 2px rgba($color-black, .3);
+
+        @include respond(phone) {
+            font-size: 2rem;
+        }
+    }
+}

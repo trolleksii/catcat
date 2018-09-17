@@ -1,0 +1,60 @@
+.header {
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem;
+    top: 0;
+    left: 0;
+    background-color: $color-emerald;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba($color-black, .3);
+
+    @include respond(phone) {
+        padding: 0 1rem;
+    }
+}
+
+.brand {
+    display: block;
+    float: left;
+    height: 5rem;
+
+    &__link {
+        display: block;
+        cursor: pointer;
+        &:link,
+        &:visited {
+            color: $color-white;
+            text-decoration: none;
+        }
+
+        &:hover .brand__img--eyes,
+        &:active .brand__img--eyes {
+            transform: scale(1);
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        height: 5rem;
+        width: 5rem;
+        vertical-align: middle;
+    }
+
+    &__img {
+        position: absolute;
+        height: 100%;
+        &--eyes {
+            height: 100%;
+            position: absolute;
+            transform: scale(.01);
+        }
+    }
+
+    &__name {
+        color: $color-white;
+        font-size: 3.5rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
