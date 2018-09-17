@@ -95,7 +95,9 @@ export const buildAddBreed = (parent) => {
     elements.input.addEventListener('input', () => {
         getBreeds()
         .then(breeds => {
-            if (elements.input.value.length < 3 || breeds.filter((breed) => elements.input.value.toUpperCase() === breed.name.toUpperCase()).length > 0) {
+            if (elements.input.value.length < 3
+                || /[^A-Z a-z]/.test(elements.input.value)
+                || breeds.filter((breed) => elements.input.value.toUpperCase() === breed.name.toUpperCase()).length > 0) {
                 inputIsValid = false;
                 highlightInput(elements.input, false);
                 disableElement(elements.button);
