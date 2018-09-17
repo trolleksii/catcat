@@ -4,14 +4,14 @@
 }
 
 .valid {
-    border: 1px solid $color-emerald-dark;
+    border: 1px solid $color-emerald-dark !important;
 }
 
 .invalid {
-    border: 1px solid $color-red;
+    border: 1px solid $color-red !important;
 }
 
 .disabled {
-    background-color: $color-gray;
-    cursor: not-allowed;
+    background-color: $color-gray !important;
+    cursor: not-allowed !important;
 }
