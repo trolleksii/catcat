@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
     <title>CatBoard</title>
 </head>
 <body>
-    <header class="header expanded">
+    <header class="header">
         <div class="brand">
             <a class="brand__link">
                 <div class="brand__logo">
@@ -19,7 +20,7 @@
             </a>
         </div>
         <div class="mobile-nav">
-            <div class="menu-btn"></div>
+            <i class="icon ion-md-menu menu-btn"></i>
         </div>
     </header>
     <nav class="nav">
@@ -30,5 +31,27 @@
     </nav>
     <main class="main">
     </main>
+    <footer class="footer">
+        <div class="footer__text">
+            <span class="copy-left">
+                &copy;
+            </span>
+            Oleksii Troian
+        </div>
+        <div class="footer__repos">
+            <div class="footer__repo">
+                <a class="footer__link" href="https://github.com/trolleksii/catcat.git">
+                    App
+                    <i class="icon ion-logo-github github"></i>
+                </a>
+            </div>
+            <div class="footer__repo">
+                <a class="footer__link" href="https://github.com/trolleksii/catsapi.git">
+                    API
+                    <i class="icon ion-logo-github github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
