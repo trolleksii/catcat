@@ -9,7 +9,7 @@ import * as pageBuilder from './pages/pageBuilder';
           menu = document.querySelector('.nav');
     pageBuilder.clearPage(main);
     pageBuilder.buildMain(main);
-    document.querySelector('.mobile-nav').addEventListener('click', (event) => {
+    document.querySelector('.mobile-menu').addEventListener('click', (event) => {
         event.stopImmediatePropagation();
         menu.classList.toggle('nav-unwrapped');
     });
